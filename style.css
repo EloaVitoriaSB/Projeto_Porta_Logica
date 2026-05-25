@@ -1,0 +1,424 @@
+:root {
+    --bg-main: #060b13;
+    --bg-card: #0f172a;
+    --bg-alt: #0a0f1d;
+    --border: #1e293b;
+    --accent: #06b6d4;
+    --accent-dark: #0891b2;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --green-live: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.text-center { text-align: center; }
+.bg-alt { background-color: var(--bg-alt); }
+
+/* NAVBAR */
+.navbar {
+    background-color: rgba(6, 11, 19, 0.85);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+
+/* BOTOES */
+.btn-primary {
+    background-color: var(--accent);
+    color: #000;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover { background-color: var(--accent-dark); }
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover { background-color: rgba(255,255,255,0.05); }
+
+/* HERO SECTION */
+.hero {
+    padding: 10rem 1rem 6rem 1rem;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(6, 182, 212, 0.08) 0%, transparent 60%);
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* SECTIONS E CARDS */
+.section { padding: 6rem 0; }
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3.5rem auto;
+    font-size: 1.05rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* INTERACTIVE LAB WORKSPACE (MELHORADO) */
+.interactive-lab {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 950px) {
+    .interactive-lab {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+}
+
+.lab-controls h3, .lab-data h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.gate-selector-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (max-width: 950px) {
+    .gate-selector-buttons { flex-direction: row; flex-wrap: wrap; }
+}
+
+.gate-btn {
+    background: #1e293b;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    text-align: left;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gate-btn:hover { background: #334155; }
+.gate-btn.active {
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+    border-color: var(--accent);
+}
+
+/* ÁREA DO CIRCUITO */
+.lab-workspace {
+    background-color: #060b13;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 3rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.circuit-view {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 450px;
+}
+
+.circuit-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-row .label, .circuit-outputs .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+/* Interruptor Estilo Caixa */
+.switch {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: var(--text-primary);
+    width: 50px;
+    height: 38px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.switch:hover { border-color: var(--accent); }
+.switch.active {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+.circuit-gate-display {
+    background-color: #0f172a;
+    border: 2px solid var(--border);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.output-block {
+    background: #1e293b;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 50px;
+    height: 38px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-top: 0.4rem;
+    transition: all 0.15s;
+}
+
+.output-block.active {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green-live);
+    border-color: var(--green-live);
+}
+
+/* TABELA DINÂMICA */
+.lab-data p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+}
+
+.dynamic-table-wrapper {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+th, td {
+    padding: 0.6rem;
+    text-align: center;
+}
+
+th {
+    background-color: #1e293b;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+td {
+    border-top: 1px solid var(--border);
+    color: #475569;
+}
+
+tr.active-row td {
+    color: var(--text-primary);
+    background-color: rgba(6, 182, 212, 0.08);
+    font-weight: 600;
+}
+
+/* SEÇÃO CATÁLOGO */
+.gates-detailed-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.detailed-card {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.card-top h3 { font-size: 1.1rem; }
+.formula {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+.detailed-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}

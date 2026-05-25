@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porta Lógica Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Porta<span>Lógica</span></a>
+            <ul class="nav-links">
+                <li><a href="#conceito">O que é?</a></li>
+                <li><a href="#simulador">Simulador</a></li>
+                <li><a href="#portas">Portas</a></li>
+            </ul>
+            <a href="#simulador" class="btn-primary">Testar Agora</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-container">
+            <span class="hero-tag">A base da computação moderna</span>
+            <h1>Explore a Eletrônica Digital em Tempo Real</h1>
+            <p>Entenda como os computadores pensam. Interaja com as portas lógicas fundamentais, altere as variáveis e veja a magia da álgebra booleana acontecer instantaneamente.</p>
+            <div class="hero-actions">
+                <a href="#simulador" class="btn-primary">Iniciar Simulação</a>
+                <a href="#conceito" class="btn-secondary">Aprender Conceito</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONCEITO SECTION -->
+    <section id="conceito" class="section bg-alt">
+        <div class="container text-center">
+            <h2 class="section-title">O que são Portas Lógicas?</h2>
+            <p class="section-subtitle">Portas lógicas são circuitos eletrônicos integrados que tomam decisões com base em sinais elétricos (0 para desligado, 1 para ligado). Combinando bilhões delas, criamos processadores funcionais.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Álgebra Booleana</h3>
+                    <p>A matemática por trás do binário, inventada por George Boole para processar verdadeiro ou falso.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Tabela Verdade</h3>
+                    <p>O mapa completo de um circuito que mostra exatamente qual será a saída para cada combinação de entrada.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Sinais Digitais</h3>
+                    <p>A linguagem das CPUs. Transistores operando como interruptores ultrarrápidos de ligar e desligar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULADOR GERAL INTERATIVO -->
+    <section id="simulador" class="section">
+        <div class="container">
+            <div class="sim-header text-center">
+                <h2 class="section-title">Laboratório Interativo</h2>
+                <p class="section-subtitle">Escolha uma porta lógica, mude os interruptores de entrada e veja o resultado do sinal se transformar imediatamente.</p>
+            </div>
+
+            <div class="interactive-lab">
+                <!-- Seletor de Portas -->
+                <div class="lab-controls">
+                    <h3>1. Selecione a Porta</h3>
+                    <div class="gate-selector-buttons">
+                        <button class="gate-btn active" data-gate="and">AND (E)</button>
+                        <button class="gate-btn" data-gate="or">OR (OU)</button>
+                        <button class="gate-btn" data-gate="not">NOT (Inversora)</button>
+                        <button class="gate-btn" data-gate="xor">XOR (Exclusiva)</button>
+                    </div>
+                </div>
+
+                <!-- Circuito Vivo -->
+                <div class="lab-workspace">
+                    <div class="circuit-view">
+                        
+                        <div class="circuit-inputs">
+                            <div class="input-row" id="container-input-a">
+                                <span class="label">Entrada A</span>
+                                <button class="switch" id="btn-a" data-value="0">0</button>
+                            </div>
+                            <div class="input-row" id="container-input-b">
+                                <span class="label">Entrada B</span>
+                                <button class="switch" id="btn-b" data-value="0">0</button>
+                            </div>
+                        </div>
+
+                        <div class="circuit-gate-display">
+                            <div class="active-gate-name" id="current-gate-title">AND</div>
+                        </div>
+
+                        <div class="circuit-outputs">
+                            <span class="label">Saída</span>
+                            <div class="output-block" id="lab-output">0</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Dados e Tabela Dinâmica -->
+                <div class="lab-data">
+                    <h3>2. Tabela Verdade Dinâmica</h3>
+                    <p id="gate-description-text">A saída só será 1 se ambas as entradas forem 1.</p>
+                    
+                    <div class="dynamic-table-wrapper">
+                        <table id="dynamic-table">
+                            <!-- Injetado dinamicamente pelo JS para não quebrar -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIA DE PORTAS COMPLETO -->
+    <section id="portas" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title text-center">Catálogo de Componentes</h2>
+            <p class="section-subtitle text-center">Fichas técnicas detalhadas das quatro portas lógicas fundamentais.</p>
+
+            <div class="gates-detailed-list">
+                <div class="detailed-card">
+                    <div class="card-top">
+                        <h3>Porta AND (E)</h3>
+                        <span class="formula">S = A · B</span>
+                    </div>
+                    <p>Age como uma multiplicação matemática binária. É usada em circuitos onde critérios de segurança triplos ou duplos precisam ser validados antes de ligar um motor ou liberar um acesso.</p>
+                </div>
+
+                <div class="detailed-card">
+                    <div class="card-top">
+                        <h3>Porta OR (OU)</h3>
+                        <span class="formula">S = A + B</span>
+                    </div>
+                    <p>Representa uma soma lógica. Se pelo menos um dos caminhos tiver energia, a saída é ligada. É o padrão utilizado em centrais de alarmes conectados a múltiplos sensores de janelas.</p>
+                </div>
+
+                <div class="detailed-card">
+                    <div class="card-top">
+                        <h3>Porta NOT (Inversora)</h3>
+                        <span class="formula">S = Ā</span>
+                    </div>
+                    <p>Inverte o sinal. Possui apenas uma entrada. Essencial para criar memórias computacionais (Flip-flops) e alternadores de pulsos automáticos dentro de relógios digitais.</p>
+                </div>
+
+                <div class="detailed-card">
+                    <div class="card-top">
+                        <h3>Porta XOR (Exclusiva)</h3>
+                        <span class="formula">S = A ⊕ B</span>
+                    </div>
+                    <p>Sua saída é verdadeira apenas se as duas entradas forem diferentes entre si. É a base matemática exata para a criação de circuitos somadores aritméticos de calculadoras e computadores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy;Eloá Vitoria Sampaio Bolzan</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
